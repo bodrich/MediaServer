@@ -41,7 +41,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func htmlVideoHandler(w http.ResponseWriter, r *http.Request) {
 	v := r.URL.Query().Get("v")
 
-       	reqVid := videoDict[v]
+	reqVid := videoDict[v]
 	if reqVid.FilePath != "" {
 		if config.Verbose {
 			log.Println("Serving requested stream : ", v)
@@ -77,12 +77,12 @@ func rawVideoHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func watchHandler(w http.ResponseWriter, r *http.Request) {
-  acceptHeader := r.Header.Get("Accept")
-  if (strings.Contains(acceptHeader, "text/html")) {
-    htmlVideoHandler(w, r)
-  } else {
-    rawVideoHandler(w, r)
-  }
+	acceptHeader := r.Header.Get("Accept")
+	if strings.Contains(acceptHeader, "text/html") {
+		htmlVideoHandler(w, r)
+	} else {
+		rawVideoHandler(w, r)
+	}
 }
 
 func initIPAddr() (ip string) {

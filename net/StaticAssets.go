@@ -29,7 +29,7 @@ func fileExists(filename string) bool {
 
 func getPublicFilePath(templateFileName string) string {
 	filename := path.Join(os.Getenv("GOPATH"),
-		"src/github.com/GAumala/MediaServer/public/",
+		"src/github.com/bodrich/MediaServer/public/",
 		templateFileName)
 	if !fileExists(filename) { // Use executable file path if GOPATH not exists
 		filename = path.Join(getProjectDir(), "public/", templateFileName)

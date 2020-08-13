@@ -25,9 +25,5 @@ _testmain.go
 
 *.json
 
-#Assets
-public/video-js.css
-public/video.js
-
 # Executable file
 MediaServer

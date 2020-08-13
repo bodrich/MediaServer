@@ -10,4 +10,20 @@
   <form>
     <input type="button" value="Go back!" onclick="history.back()">
   </form>
+  </br>
+  <input type="text" value="" id="rawUrl">
+  <button onclick="copyToBuffer()">Copy URL</button>
+
+  <script>
+    document.getElementById("rawUrl").value = window.location.protocol + "//" + window.location.host + "/" + "/vid?v={{.Key}}";
+
+    function copyToBuffer() {
+      var copyText = document.getElementById("rawUrl");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("URL COPY: " + copyText.value);
+    }
+
+  </script>
 </body>
